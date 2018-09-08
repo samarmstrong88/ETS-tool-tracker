@@ -1,0 +1,24 @@
+.FilterBar {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: fixed;
+  top: 55px;
+  left: 0;
+  width: 200px;
+  display: grid;
+  z-index: 2;
+  background-color: #454545;
+  height: calc(100vh - 55px);;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 15px;
+  text-align: left;
+
+}
+
+.category-selector, .status-selector {
+  display: grid;
+  -ms-grid-template-columns: auto;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+}
