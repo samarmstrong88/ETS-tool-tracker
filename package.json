@@ -1,17 +1,17 @@
 {
-  "name": "react-express-example",
+  "name": "ETS-tool-tracker",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "devStart": "SET DEBUG=react-express-example:* & nodemon start"
+    "devStart": "SET DEBUG=ETS-tool-tracker:* & nodemon start"
   },
   "nodemonConfig": {
     "ignore": ["client/"]
-  }
-  "keywords": [],
+  },
+
   "author": "",
   "license": "ISC",
   "dependencies": {
