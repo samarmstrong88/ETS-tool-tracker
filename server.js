@@ -10,7 +10,7 @@ const mongoose = require('mongoose');
 const mongoUri = 'private-removed';
 
 
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect(mongoUri);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', () => console.log('MongoDB Connected'));
