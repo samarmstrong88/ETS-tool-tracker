@@ -28,7 +28,7 @@ app.use(function (req, res, next) {
   // Pass to next layer of middleware
   next();
 });
-app.use(cors());
+// app.use(cors());
 app.use(express.static(path.join(__dirname, 'client/public')));
 app.use(express.static(path.join(__dirname, 'client/src')));
 app.use(express.static(path.join(__dirname, 'client/build')));
