@@ -5,7 +5,11 @@ const Job = require('./models/job');
 
 const app = express();
 
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
+
+const mongoUri = 'private-removed';
+
+
 mongoose.connect('mongodb://localhost/test');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
