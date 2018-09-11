@@ -31,7 +31,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('/job/all')
+    fetch('http://etstooltracker.qwugpm3akq.us-east-1.elasticbeanstalk.com/job/all')
     .then(res => res.json())
     .then(res => this.setState({jobData: res}))
     // .then(console.log(this.state.jobData))
