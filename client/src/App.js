@@ -68,23 +68,25 @@ class App extends Component {
           handleStatusChange = {this.handleStatusChange}
           handleCategoryChange = {this.handleCategoryChange}
           />
-        <ul>
-          {this.state.jobData
-            .filter((job) => {
-              if (this.state.selectedCategory === 'all') return true;
-              if (job.category === this.state.selectedCategory) return true;
-              else return false
+        <div className = 'ContentArea'>
+          <ul>
+            {this.state.jobData
+              .filter((job) => {
+                if (this.state.selectedCategory === 'all') return true;
+                if (job.category === this.state.selectedCategory) return true;
+                else return false
 
-            })
-            .filter((job) => {
-              if (this.state.statusList.includes(job.status)) return true
-            })
-            .sort((a,b) => b.job_no - a.job_no)
-            .map((job, key) => {
-            return <JobCard jobCardData={job} key = {job._id}/>
-            }
-          )}
-        </ul>
+              })
+              .filter((job) => {
+                if (this.state.statusList.includes(job.status)) return true
+              })
+              .sort((a,b) => b.job_no - a.job_no)
+              .map((job, key) => {
+              return <JobCard jobCardData={job} key = {job._id}/>
+              }
+            )}
+          </ul>
+        </div>
       </div>
     );
   }
