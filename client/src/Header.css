@@ -1,5 +1,5 @@
 .Header h1 {
-  color: rgb(240,240,240);
+  color: #151515;
   font-family: sans-serif;
   display: flex;
   flex-direction: row;
@@ -10,18 +10,20 @@
 h1 {
 
   margin: 0;
-  padding: 15px 20px;
+  padding: 10px 20px;
   text-align: left;
   font-size: 1.5rem;
-  background: #E60013;
+  background: linear-gradient(#ff091d, #e60013);
   font-weight: bolder;
 }
 
 .Header {
-  position: fixed;
+
   top: 0;
   left: 0;
   width: 100vw;
   z-index: 3;
+  -ms-grid-area: header;
+  grid-area: header;
 
 }

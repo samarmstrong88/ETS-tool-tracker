@@ -1,13 +1,27 @@
 const express = require('express');
 const path = require('path');
 const Job = require('./models/job');
+require('dotenv').config();
+
+//Fetch sensitive DB information from env variables
+const dbhost = process.env.DB_HOST;
+const dbname = process.env.DB_NAME;
+const dbpassword = process.env.DB_PASSWORD;
+const dbusername = process.env.DB_USERNAME;
+
 
 
 const app = express();
 
 const mongoose = require('mongoose');
 
+<<<<<<< HEAD
 const mongoUri = 'private-removed';
+=======
+//create Mlab connection string from env variables
+const mongoUri = `mongodb://${dbusername}:${dbpassword}@${dbhost}/${dbname}`;
+
+>>>>>>> 77aab33... setup envs
 
 
 mongoose.connect(mongoUri);
@@ -15,17 +29,9 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', () => console.log('MongoDB Connected'));
 // Serve static files from the React App
-app.use(function (req, res, next) {
-  // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', 'http://etstooltracker.s3-website-ap-southeast-2.amazonaws.com/');
-  // Request methods you wish to allow
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  // Request headers you wish to allow
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-  // Set to true if you need the website to include cookies in the requests sent
-  // to the API (e.g. in case you use sessions)
-  res.setHeader('Access-Control-Allow-Credentials', true);
-  // Pass to next layer of middleware
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 // app.use(cors());
