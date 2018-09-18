@@ -15,15 +15,13 @@ const app = express();
 
 const mongoose = require('mongoose');
 
-<<<<<<< HEAD
-const mongoUri = 'private-removed';
-=======
 //create Mlab connection string from env variables
-const mongoUri = `mongodb://${dbusername}:${dbpassword}@${dbhost}/${dbname}`;
-
->>>>>>> 77aab33... setup envs
-
-
+if (process.env.NODE_ENV == 'development') {
+  mongoUri = 'mongodb://localhost/test'
+}
+else {
+  const mongoUri = `mongodb://${dbusername}:${dbpassword}@${dbhost}/${dbname}`;
+}
 mongoose.connect(mongoUri);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));

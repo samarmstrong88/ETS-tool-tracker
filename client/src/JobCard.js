@@ -5,7 +5,12 @@ class JobCard extends React.Component {
   render() {
     return (
     <div className = "JobCard">
-      <div>Job No: {this.props.jobCardData.job_no}</div>
+      <div className = 'JobCard-Title'>
+      <h3>{this.props.jobCardData.job_no}</h3>
+        <h3>Placeholder Name</h3>
+      </div>
+
+
       <div>Brand: {this.props.jobCardData.brand}</div>
     </div>
 

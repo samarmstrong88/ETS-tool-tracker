@@ -21,7 +21,7 @@ class App extends Component {
 
     this.handleStatusChange = this.handleStatusChange.bind(this);
     this.handleCategoryChange = this.handleCategoryChange.bind(this);
-    // this.handleCategoryChange = this.handleCategoryChange.bind(this));
+
 
     this.state = {
       jobData: [],
@@ -31,7 +31,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://etstooltracker.qwugpm3akq.us-east-1.elasticbeanstalk.com/job/all')
+    // fetch('http://etstooltracker.qwugpm3akq.us-east-1.elasticbeanstalk.com/job/all')
+    fetch('/job/all')
     .then(res => res.json())
     .then(res => this.setState({jobData: res}))
     // .then(console.log(this.state.jobData))
@@ -49,7 +50,7 @@ class App extends Component {
       statusList.push(e.target.value);
       this.setState({statusList})
     }
-     // this.setState({selectedStatus: e.target.value});
+
   }
 
   handleCategoryChange(e) {
@@ -78,6 +79,7 @@ class App extends Component {
 
               })
               .filter((job) => {
+                if (this.state.statusList.length === 0) return true;
                 if (this.state.statusList.includes(job.status)) return true
               })
               .sort((a,b) => b.job_no - a.job_no)
