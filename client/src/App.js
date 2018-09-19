@@ -79,7 +79,10 @@ class App extends Component {
 
               })
               .filter((job) => {
+<<<<<<< HEAD
                 if (this.state.statusList.length === 0) return true;
+=======
+>>>>>>> d4087a4517fda525b0f8f36ea7e669c194459746
                 if (this.state.statusList.includes(job.status)) return true
               })
               .sort((a,b) => b.job_no - a.job_no)

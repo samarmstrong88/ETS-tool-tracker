@@ -2,6 +2,16 @@ const express = require('express');
 const path = require('path');
 const Job = require('./models/job');
 require('dotenv').config();
+<<<<<<< HEAD
+=======
+
+//Fetch sensitive DB information from env variables
+const dbhost = process.env.DB_HOST;
+const dbname = process.env.DB_NAME;
+const dbpassword = process.env.DB_PASSWORD;
+const dbusername = process.env.DB_USERNAME;
+
+>>>>>>> d4087a4517fda525b0f8f36ea7e669c194459746
 
 //Fetch sensitive DB information from env variables
 const dbhost = process.env.DB_HOST;
@@ -11,7 +21,17 @@ const dbusername = process.env.DB_USERNAME;
 
 
 
+<<<<<<< HEAD
 const app = express();
+=======
+<<<<<<< HEAD
+const mongoUri = 'private-removed';
+=======
+//create Mlab connection string from env variables
+const mongoUri = `mongodb://${dbusername}:${dbpassword}@${dbhost}/${dbname}`;
+
+>>>>>>> 77aab33... setup envs
+>>>>>>> d4087a4517fda525b0f8f36ea7e669c194459746
 
 const mongoose = require('mongoose');
 
